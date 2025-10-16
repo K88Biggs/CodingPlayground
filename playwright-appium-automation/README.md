@@ -1,5 +1,5 @@
 # Playwright + Appium Automation Monorepo (TypeScript)
-
+[![CI](https://github.com/K88Biggs/CodingPlayground/actions/workflows/ci.yml/badge.svg)](https://github.com/K88Biggs/CodingPlayground/actions/workflows/ci.yml)
 A production-ready scaffold that covers:
 - **Web UI (desktop + mobile emulation)** with Playwright
 - **API tests** with Playwright request fixture
