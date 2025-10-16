@@ -6,23 +6,42 @@ on:
   pull_request:
 
 jobs:
-  web-playwright:
+  e2e:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        kind: [web, api]
+
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
+
       - name: Install deps
         run: npm install
-      - name: Install browsers
+
+      - name: Install Playwright browsers
+        if: matrix.kind == 'web' || matrix.kind == 'api'
         run: npx playwright install --with-deps
         working-directory: packages/web-playwright
-      - name: Run Playwright tests
-        run: npm run test:web
+
+      # WEB (exclude @api-tagged tests)
+      - name: Run Playwright (WEB)
+        if: matrix.kind == 'web'
+        run: npx playwright test --grep-invert @api
+        working-directory: packages/web-playwright
+
+      # API only (only files in tests/api or filtered by @api)
+      - name: Run Playwright (API)
+        if: matrix.kind == 'api'
+        run: npx playwright test --grep @api tests/api
+        working-directory: packages/web-playwright
+
       - name: Upload HTML report
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: playwright-report
+          name: playwright-report-${{ matrix.kind }}
           path: packages/web-playwright/playwright-report
