@@ -1,0 +1,20 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# Playwright artifacts
+**/test-results/
+**/playwright-report/
+**/blob-report/
+**/allure-results/
+**/allure-report/
+
+# Appium logs
+**/reports/
+**/wdio-*.log
+
+# OS
+.DS_Store

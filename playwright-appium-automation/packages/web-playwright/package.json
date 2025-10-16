@@ -1,0 +1,24 @@
+{
+  "name": "web-playwright",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "echo nothing to build",
+    "test": "playwright test",
+    "test:api": "playwright test tests/api",
+    "test:mobile": "playwright test -g \"@mobile\"",
+    "report": "playwright show-report",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "eslint": "^9.9.0",
+    "@types/node": "^20.11.30",
+    "prettier": "^3.3.3",
+    "allure-playwright": "^3.0.0-beta.7"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "qa-automation-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "packages/web-playwright",
+    "packages/native-apps"
+  ],
+  "scripts": {
+    "bootstrap": "npm i && npm run -w web-playwright build && npm run -w native-apps build",
+    "test:web": "npm run -w web-playwright test",
+    "test:api": "npm run -w web-playwright test:api",
+    "test:mobile-web": "npm run -w web-playwright test:mobile",
+    "report:web": "npm run -w web-playwright report",
+    "lint:web": "npm run -w web-playwright lint",
+    "test:native": "npm run -w native-apps test",
+    "report:native": "npm run -w native-apps report"
+  }
+}
