@@ -16,8 +16,7 @@
     "@wdio/appium-service": "^9.0.6",
     "typescript": "^5.5.4",
     "ts-node": "^10.9.2",
-    "@types/node": "^20.11.30",
-    "wdio-allure-reporter": "^9.0.6"
+    "@types/node": "^20.11.30"
   },
   "dependencies": {
     "appium": "^2.12.1",
