@@ -30,7 +30,6 @@ npm run test:native
 ### Demo Websites
 - **Sauce Demo**: https://www.saucedemo.com (user: `standard_user`, pass: `secret_sauce`)
 - **The Internet (Herokuapp)**: https://the-internet.herokuapp.com
-- **API playground**: https://reqres.in
 
 ### Sample Apps
 - **ApiDemos** (Android) – classic sample app used in Appium tutorials.
